@@ -4,16 +4,16 @@ kind: CompositeResourceDefinition
 metadata:
   name: sqls.devopstoolkitseries.com
 spec:
-  group: devopstoolkitseries.com
-  names:
+  group: devopstoolkitseries.com # Create a group for the resource definition to make sure resources are uniquely defined (even if they have the same kind..)
+  names: # Define the name of the Resource Definition (in singular and plural).
     kind: SQL
     plural: sqls
   claimNames:
     kind: SQLClaim
     plural: sqlclaims
-  versions:
+  versions: # Define a version of the Resource Definition.
   - name: v1alpha1
-    served: true
-    referenceable: true
+    served: true # Tell Crossplane wether this version is served to users (enabled).
+    referenceable: true # Set the curent active version (only one can be set).
     schema:
       openAPIV3Schema: {}

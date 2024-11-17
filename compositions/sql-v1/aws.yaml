@@ -1,18 +1,20 @@
 ---
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
-metadata:
+metadata: # This composition can be identified through a name and label
+  # This composition will be use whenever someon define an SQL Composite with a matching name and label.
   name: aws-postgresql
   labels:
     provider: aws
     db: postgresql
 spec:
-  compositeTypeRef:
+  compositeTypeRef: # Which XRDs is associated with this composition
     apiVersion: devopstoolkitseries.com/v1alpha1
     kind: SQL
-  resources:
-  - name: vpc
-    base:
+  resources: # Contains the list of resources that should be managed whenever a SQL composite is created.
+    # Each resources have a name and a base.
+  - name: vpc # Unique identifier inside the composition.
+    base: # Contains all details of a resource that should be managed by the composition.
       apiVersion: ec2.aws.upbound.io/v1beta1
       kind: VPC
       spec:

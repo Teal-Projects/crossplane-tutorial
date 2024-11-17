@@ -12,7 +12,7 @@ kind: SQL
 metadata:
   name: my-db
 spec:
-  compositionSelector:
+  compositionSelector: # Select the composition to be used
     matchLabels:
       provider: aws
       db: postgresql

@@ -44,7 +44,7 @@ if [[ "$HYPERSCALER" == "google" ]]; then
 else
 
 	kubectl --namespace a-team delete \
-		--filename examples/$HYPERSCALER-sql-v6.yaml
+		--filename examples/$HYPERSCALER-sql-v1.yaml
 
 	COUNTER=$(kubectl get managed --no-headers | grep -v database \
 		| wc -l)
