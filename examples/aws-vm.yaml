@@ -6,7 +6,7 @@ metadata:
 spec:
   forProvider: # Map the parameters  of the resource it manages.
     ami: ami-052efd3df9dad4825
-    region: us-east-1
+    region: eu-central-1
     instanceType: t2.nano
     subnetIdRef: # Refer to the VPC's subnet
       name: my-vm
@@ -20,7 +20,7 @@ metadata:
   name: my-vm
 spec:
   forProvider: # Map the parameters  of the resource it manages.
-    region: us-east-1
+    region: eu-central-1
     instanceIdRef: # Refer to the created instance
       name: my-vm
     state: running
@@ -31,7 +31,7 @@ metadata:
   name: my-vm
 spec:
   forProvider: # Map the parameters  of the resource it manages.
-    region: us-east-1
+    region: eu-central-1
     cidrBlock: 10.0.0.0/16
     enableDnsSupport: true
 ---
@@ -41,8 +41,8 @@ metadata:
   name: my-vm
 spec:
   forProvider: # Map the parameters  of the resource it manages.
-    region: us-east-1
-    availabilityZone: us-east-1a
+    region: eu-central-1
+    availabilityZone: eu-central-1a
     cidrBlock: 10.0.0.0/24
     vpcIdRef: # Refer to the VPC
       name: my-vm
