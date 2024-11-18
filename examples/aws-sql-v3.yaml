@@ -15,7 +15,7 @@ metadata:
     organization: DevOps Toolkit
     author: Viktor Farcic <viktor@farcic.com>
 spec:
-  id: my-db
+  id: my-db # Name of the DB
   compositionSelector:
     matchLabels:
       provider: aws

@@ -10,12 +10,13 @@ spec:
   compositeTypeRef:
     apiVersion: devopstoolkitseries.com/v1alpha1
     kind: SQL
-  patchSets:
+  patchSets: # Patch value from the Composite resource to the Managed resource.
     - name: metadata
       patches:
         - fromFieldPath: metadata.annotations
           toFieldPath: metadata.annotations
-        - fromFieldPath: spec.id
+          # Take the value from the parent resource and put it into a resource managed by Composition.
+        - fromFieldPath: spec.id # custome field
           toFieldPath: metadata.name
   resources:
     - name: vpc
@@ -288,7 +289,7 @@ spec:
           patchSetName: metadata
         - fromFieldPath: spec.parameters.size
           toFieldPath: spec.forProvider.instanceClass
-          transforms:
+          transforms: # Transform the input value 'small,medium..' to miningful value for AWS.
             - type: map
               map:
                 small: db.m5.large

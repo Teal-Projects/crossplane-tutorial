@@ -34,7 +34,7 @@ spec:
             availabilityZone: eu-central-1a
             cidrBlock: 11.0.0.0/24
             vpcIdSelector:
-              matchControllerRef: true
+              matchControllerRef: true # If you need reference to the VPC, find it yourself.
     - name: subnet-b
       base:
         apiVersion: ec2.aws.upbound.io/v1beta1
