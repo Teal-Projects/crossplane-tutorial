@@ -11,6 +11,7 @@ spec:
     apiVersion: devopstoolkitseries.com/v1alpha1
     kind: SQL
   mode: Pipeline
+  # In pipeline mode, array of steps are defined. Each steps are process by the function "patch and transform".
   pipeline:
     - functionRef:
         name: crossplane-contrib-function-patch-and-transform

@@ -5,3 +5,5 @@ metadata:
   name: crossplane-sql
 spec:
   package: xpkg.upbound.io/vfarcic/dot-sql:v0.0.7
+  # Example ECR repo
+  #package: 851725478852.dkr.ecr.eu-central-1.amazonaws.com/crossplane/acm-cert:v0.0.1
